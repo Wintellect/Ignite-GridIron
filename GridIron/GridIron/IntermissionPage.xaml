@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="GridIron.IntermissionPage"
+		Style="{StaticResource PageStyle}">
+
+	<Grid>
+
+        <Image Source="wintellect.png"
+                HorizontalOptions="End" VerticalOptions="Start"
+                Margin="0,12,-20,0" Opacity="0.2" 
+                Aspect="AspectFit" Scale="0.55" />
+		
+        <Image Source="intermission.png" Aspect="AspectFit"
+			HorizontalOptions="End" VerticalOptions="End"
+			Margin="65" Opacity="0.1" Scale="1.5"/>
+		
+        <StackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Spacing="15">
+            
+            <Label x:Name="Label1" Text="Up Next..." 
+                HorizontalOptions="Center" Margin="0,0,0,20"/>
+            
+            <Label x:Name="Artist1" Text="Artist One" 
+                HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold"/>
+            
+            <Label x:Name="Label2" Text="versus" 
+                HorizontalOptions="Center" FontSize="Small"/>
+            
+            <Label x:Name="Artist2" Text="Artist Two!" 
+                HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold"/>
+            
+            <Label Text="00:00" x:Name="Counter" 
+                HorizontalOptions="Center" Margin="0,20,0,0"/>
+            
+        </StackLayout>
+	</Grid>
+
+</ContentPage>

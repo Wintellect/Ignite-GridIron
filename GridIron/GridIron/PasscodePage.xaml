@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="GridIron.PasscodePage" 
+		Style="{StaticResource PageStyle}">
+
+	<Grid>
+
+        <Image Source="wintellect.png"
+                HorizontalOptions="End" VerticalOptions="Start"
+                Margin="0,12,-20,0" Opacity="0.2" 
+			    Aspect="AspectFit" Scale="0.55" />
+		
+        <Grid
+    			HorizontalOptions="Center"
+    			VerticalOptions="Center"
+    			ColumnSpacing="20"
+    			RowSpacing="5"
+    			WidthRequest="350"
+    			HeightRequest="180">
+    		<Grid.ColumnDefinitions>
+                <ColumnDefinition Width="103"/>
+                <ColumnDefinition Width="Auto"/>
+    		</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+
+    		<Image Source="login.png" Grid.RowSpan="2" HeightRequest="180" Aspect="AspectFill"/>
+
+    		<Label Text="Competition Passcode:" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="End"/>
+
+    		<StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" VerticalOptions="Start">
+                <Entry x:Name="Passcode" WidthRequest="180" VerticalOptions="Center" />
+                <Button Text="Enter" x:Name="EnterButton" Clicked="EnterClicked" VerticalOptions="Center" />
+    		</StackLayout>
+
+    	</Grid>
+    </Grid>
+	
+</ContentPage>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="GridIron.BattlePage" 
+		Style="{StaticResource PageStyle}">
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Color x:Key="banner1Color">#A6ADE7</Color>
+            <Color x:Key="banner2Color">#E7A6A6</Color>
+            <Color x:Key="score2Color">#F89390</Color>
+            <Color x:Key="nameColor">#E3E3E3</Color>
+            <Color x:Key="voteColor">#FAFAFA</Color>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+	<Grid>
+
+        <Image Source="wintellect.png"
+                HorizontalOptions="End" VerticalOptions="Start"
+                Margin="0,12,-20,0" Opacity="0.2" 
+                Aspect="AspectFit" Scale="0.55" />
+
+		<Image x:Name="InfoBar"
+				Source="score.png" Aspect="Fill"
+				HorizontalOptions="Fill" VerticalOptions="Center"
+				HeightRequest="75">
+		</Image>
+
+        <Grid x:Name="Score" HeightRequest="75"
+				VerticalOptions="Center" HorizontalOptions="Fill"
+				ColumnSpacing="0" RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="42"/>
+                <ColumnDefinition Width="300*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Column="1" Source="redscore.png" Aspect="Fill"/>
+            <BoxView Grid.Column="2" HeightRequest="64" VerticalOptions="Center"
+                Color="{StaticResource score2Color}" 
+                BackgroundColor="{StaticResource score2Color}"/>
+		</Grid>
+		
+		<Grid x:Name="InfoPanel"
+				VerticalOptions="Center" HorizontalOptions="Center">
+			<BoxView Color="White" Opacity="0.4" />
+            <StackLayout Spacing="0" Margin="10,2"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                <Label x:Name="BattleName" Text="Active Battle" HorizontalOptions="Center" Opacity="0.6"/>
+                <Label x:Name="Counter" Text="00:00" HorizontalOptions="Center" Opacity="0.6"/>
+            </StackLayout>
+		</Grid>
+
+		<Grid x:Name="Banner1"
+				WidthRequest="542" HeightRequest="118" 
+				HorizontalOptions="Start" VerticalOptions="Start"
+				ColumnSpacing="0" RowSpacing="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="96"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="118"/>
+			</Grid.RowDefinitions>
+			<Grid.GestureRecognizers>
+				<TapGestureRecognizer x:Name="Vote1Gesture" />
+			</Grid.GestureRecognizers>
+			<BoxView 
+				Color="{StaticResource banner1Color}" 
+				BackgroundColor="{StaticResource banner1Color}" />
+			<Image Grid.Column="1" Source="banner1.png" Aspect="Fill" />
+			<StackLayout Orientation="Vertical" Grid.ColumnSpan="2" 
+					Spacing="0" Margin="12,12,20,12" HorizontalOptions="Start">
+				<Label x:Name="Artist1" Text="Artist 1" 
+					FontSize="30" TextColor="{StaticResource nameColor}" 
+					HorizontalOptions="Start" />
+                <Label x:Name="Vote1" Text="Vote" 
+					FontSize="40" TextColor="{StaticResource voteColor}" 
+					HorizontalOptions="Start" />
+			</StackLayout>
+		</Grid>
+
+        <Grid x:Name="Banner2"
+				WidthRequest="542" HeightRequest="118" 
+				HorizontalOptions="End" VerticalOptions="End"
+				ColumnSpacing="0" RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="96"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="118"/>
+            </Grid.RowDefinitions>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer x:Name="Vote2Gesture" />
+            </Grid.GestureRecognizers>
+            <Image Source="banner2.png" Aspect="Fill"/>
+            <BoxView Grid.Column="1" 
+				Color="{StaticResource banner2Color}" 
+				BackgroundColor="{StaticResource banner2Color}"/>
+            <StackLayout Orientation="Vertical" Grid.ColumnSpan="2" 
+                    Spacing="0" Margin="12,12,20,12" HorizontalOptions="End">
+                <Label x:Name="Artist2" Text="Artist 2" 
+					FontSize="30" TextColor="{StaticResource nameColor}" 
+					HorizontalOptions="End"/>
+                <Label x:Name="Vote2" Text="Vote" 
+					FontSize="40" TextColor="{StaticResource voteColor}" 
+					HorizontalOptions="End"/>
+            </StackLayout>
+        </Grid>
+		
+	</Grid>
+
+</ContentPage>

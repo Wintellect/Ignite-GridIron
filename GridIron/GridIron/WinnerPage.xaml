@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="GridIron.WinnerPage"
+		Style="{StaticResource PageStyle}">
+
+	<Grid>
+
+        <Image Source="wintellect.png"
+                HorizontalOptions="End" VerticalOptions="Start"
+                Margin="0,12,-20,0" Opacity="0.2" 
+                Aspect="AspectFit" Scale="0.55" />
+		
+        <StackLayout Orientation="Vertical" Spacing="10" Margin="60"
+                HorizontalOptions="Center" VerticalOptions="Center">
+
+            <Label 
+                Text="Competition is Closed"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+            <Label
+                Text="Thank you for your interest. The Ignite 2016 FlatIron to GridIron competition has concluded, and the winner by popular vote was:" 
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"/>
+            <Label x:Name="WinnerLabel"
+                Text="- - - - -"
+                FontSize="Large"
+                FontAttributes="Bold,Italic"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"/>
+
+        </StackLayout>
+
+	</Grid>
+
+</ContentPage>
